@@ -1,7 +1,10 @@
 import GoodsItem from "./GoodsItem";
+import { useContext } from 'react'
+import { ShopContext } from "../context";
 
-const GoodsList = (props) => {
-  const { goods = [], order, addToCart} = props;
+
+const GoodsList = () => {
+  const { goods = [], order} = useContext(ShopContext);
 
   
   return (
@@ -14,7 +17,6 @@ const GoodsList = (props) => {
         price={good.price}
         description={good.description}
         full_background={good.full_background}
-        addToCart={addToCart}
         order={order}
         good={good}
         />;

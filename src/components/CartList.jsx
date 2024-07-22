@@ -1,7 +1,9 @@
 import CartItem from "./CartItem";
+import { useContext } from 'react'
+import { ShopContext } from "../context";
 
-const CartList = ({ order, handleCartShow, removeFromCart, incQuantity, decQuantity }) => {
-
+const CartList = () => {
+  const { order, handleCartShow } = useContext(ShopContext)
  const totalPrice = order.reduce((acc, { price, quantity }) => acc + price * quantity, 0);
 
   return (
@@ -18,9 +20,6 @@ const CartList = ({ order, handleCartShow, removeFromCart, incQuantity, decQuant
               name={good.name}
               price={good.price}
               quantity={good.quantity}
-              removeFromCart={removeFromCart}
-              incQuantity={incQuantity}
-              decQuantity={decQuantity}
             />
           );
         })
@@ -29,7 +28,7 @@ const CartList = ({ order, handleCartShow, removeFromCart, incQuantity, decQuant
       )}
       <li className="collection-item active">
         <span>Общая стоимость: {totalPrice} руб.</span>
-        <button className="secondary-content teal lighten-2"> Оформить</button>
+        <button className="secondary-content teal lighten-2 border"> Оформить</button>
       </li>
     </ul>
   );

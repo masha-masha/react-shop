@@ -1,18 +1,19 @@
-import { useEffect } from 'react'
+import { useEffect, useContext } from 'react'
+import { ShopContext } from "../context";
 
-const Alert = ({ name, closeAlert }) => {
-
+const Alert = () => {
+  const {alertName, closeAlert} = useContext(ShopContext);
     useEffect(() => {
         const timerId = setTimeout(closeAlert, 3000);
        return () => {
         clearInterval(timerId)
        }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [name])
+    }, [alertName])
 
   return (
     <div id='toast-container'>
-        <div className="toast">Товар "{name}" добавлен в корзину</div>
+        <div className="toast">Товар "{alertName}" добавлен в корзину</div>
     </div>
   )
 }

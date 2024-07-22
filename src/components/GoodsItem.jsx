@@ -1,5 +1,8 @@
-const GoodsItem = ({ id, name, description, price, full_background, addToCart}) => {
+import { useContext } from "react";
+import { ShopContext } from "../context";
 
+const GoodsItem = ({ id, name, description, price, full_background}) => {
+   const { addToCart } = useContext(ShopContext);
   return (
      
     <div className="card">

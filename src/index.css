@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   background-color: bisque;
 }
 
@@ -97,4 +98,7 @@ nav {
    opacity: 1;
    transform: translateY(0rem)
   }
+}
+.border {
+ border-color: #26A69A;
 }

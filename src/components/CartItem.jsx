@@ -1,4 +1,9 @@
-const CartItem = ({ id, name, price, quantity, removeFromCart, incQuantity, decQuantity }) => {
+import { useContext } from 'react'
+import { ShopContext } from "../context";
+
+const CartItem = ({ id, name, price, quantity }) => {
+
+  const {removeFromCart, incQuantity, decQuantity} = useContext(ShopContext)
   return (
     <li className="collection-item">
       {name} 

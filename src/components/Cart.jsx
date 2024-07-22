@@ -1,6 +1,8 @@
-import React from 'react'
+import { useContext } from 'react'
+import { ShopContext } from "../context";
 
-const Cart = ({ quantity = 0, handleCartShow }) => {
+const Cart = ({ quantity = 0}) => {
+  const { handleCartShow } = useContext(ShopContext)
   return (
     <div
       className='cart deep-orange darken-1 white-text'
